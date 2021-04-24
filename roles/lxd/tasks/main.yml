@@ -1,0 +1,19 @@
+---
+# tasks file for lxc
+- name: Create a started container
+  lxd_container:
+    name: controller
+    state: started
+    source:
+      type: image
+      mode: pull
+      server: https://images.linuxcontainers.org
+      protocol: lxd
+      alias: opensuse/15.2/amd64
+    profiles: ["default"]
+    wait_for_ipv4_addresses: true
+    timeout: 600
+
+- name: Debug execute in container
+  delegate_to: controller
+  shell: "cat /etc/os-release"

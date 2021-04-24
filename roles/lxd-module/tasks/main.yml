@@ -1,0 +1,12 @@
+---
+# tasks file for lxc-module
+- name: Install lxc
+  become: true
+  snap:
+    name: lxd
+    classic: yes
+  
+- name: Install python3-lxc
+  become: true
+  apt:
+    name: python3-lxc
