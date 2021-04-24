@@ -14,6 +14,3 @@
     wait_for_ipv4_addresses: true
     timeout: 600
 
-- name: Debug execute in container
-  delegate_to: controller
-  shell: "cat /etc/os-release"
