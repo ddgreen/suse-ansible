@@ -2,7 +2,7 @@
 # tasks file for lxc-module
 - name: Install lxc
   become: true
-  snap:
+  community.general.snap:
     name: lxd
     classic: yes
   
